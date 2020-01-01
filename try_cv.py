@@ -106,7 +106,9 @@ def analysis_video(vname):
                     print('Paused')
         else:
             break
-    print(qr_strings)
+    decoded_content = code2data(''.join(qr_strings))
+    with open('a.out', 'a') as f:
+      f.write(decoded_content)
 
 #capture_video()
 analysis_video(sys.argv[1])
